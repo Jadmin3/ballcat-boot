@@ -1,4 +1,4 @@
-package com.your.packages.admin.config;
+package com.xxc.base.admin.config;
 
 import com.hccake.ballcat.common.log.access.handler.AccessLogHandler;
 import com.hccake.ballcat.common.log.operation.handler.OperationLogHandler;

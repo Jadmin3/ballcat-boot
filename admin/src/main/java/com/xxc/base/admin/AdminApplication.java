@@ -1,4 +1,4 @@
-package com.your.packages.admin;
+package com.xxc.base.admin;
 
 import com.hccake.ballcat.autoconfigure.log.annotation.EnableAccessLog;
 import com.hccake.ballcat.autoconfigure.log.annotation.EnableOperationLog;
@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableSwagger2Aggregator
 @EnableAccessLog
 @EnableOperationLog
-@MapperScan({ "com.your.packages.**.mapper" })
+@MapperScan({ "com.xxc.base.**.mapper" })
 @SpringBootApplication
 public class AdminApplication {
 
