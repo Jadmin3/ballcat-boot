@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8089
 
 spring:
   application:
@@ -79,7 +79,7 @@ ballcat:
       authorization-scope-list:
         - scope: server
           description: server all
-      token-url: http://ballcat-admin:8080/oauth/token
+      token-url: http://ballcat-admin:8089/oauth/token
 
 
 

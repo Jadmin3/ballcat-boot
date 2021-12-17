@@ -6,11 +6,13 @@ import com.hccake.ballcat.common.swagger.annotation.EnableSwagger2Aggregator;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * @author Hccake
+ * @author Jadmin
  */
 @EnableSwagger2Aggregator
+@EnableScheduling
 @EnableAccessLog
 @EnableOperationLog
 @MapperScan({ "com.xxc.base.**.mapper" })

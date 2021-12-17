@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 日志处理类注册
  *
- * @author cheng
+ * @author Jadmin
  */
 @Configuration(proxyBeanMethods = false)
 public class LogHandlerConfig {
