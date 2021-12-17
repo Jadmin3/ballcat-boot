@@ -28,7 +28,8 @@ mybatis-plus:
       update-strategy: not_empty
       logic-delete-value: "NOW()" # 逻辑已删除值(使用当前时间标识)
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
-
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # BallCat 相关配置
 ballcat:
@@ -38,7 +39,7 @@ ballcat:
     oauth2:
       authorizationserver:
         # 登陆验证码是否开启
-        login-captcha-enabled: true
+        login-captcha-enabled: false
       resourceserver:
         ## 忽略鉴权的 url 列表
         ignore-urls:
@@ -79,7 +80,7 @@ ballcat:
       authorization-scope-list:
         - scope: server
           description: server all
-      token-url: http://ballcat-admin:8089/oauth/token
+      token-url: http://127.0.0.1:8089/oauth/token
 
 
 
