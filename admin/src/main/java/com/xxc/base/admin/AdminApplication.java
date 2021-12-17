@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
+ * @date 2021年12月18日00:13:19
  * @author Jadmin
  */
 @EnableSwagger2Aggregator
