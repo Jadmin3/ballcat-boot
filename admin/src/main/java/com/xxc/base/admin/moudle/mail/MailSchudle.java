@@ -1,6 +1,7 @@
 package com.xxc.base.admin.moudle.mail;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.extra.mail.MailAccount;
 import cn.hutool.extra.mail.MailUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +29,7 @@ public class MailSchudle {
 		account.setUser("1243678726");
 		account.setPass("fuhzsshyrexsujchb");
 		account.setSslEnable(true);
-		String content = "现在是:" + LocalDateTime.now() + ",下班啦~";
+		String content = "现在是:" + DateUtil.now() + ",下班啦~";
 		MailUtil.send(account, CollUtil.newArrayList("admin@xxc520.cn"), "记得下班打卡！！！！", content + "下班啦 下班啦", false);
 	}
 
