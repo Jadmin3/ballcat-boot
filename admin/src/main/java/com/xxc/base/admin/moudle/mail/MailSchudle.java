@@ -9,7 +9,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
  * @author Jadmin
@@ -27,7 +26,7 @@ public class MailSchudle {
 		account.setAuth(true);
 		account.setFrom("1243678726@qq.com");
 		account.setUser("1243678726");
-		account.setPass("fuhzsshyrexsujchb");
+		account.setPass("fuhzshyrexsujchb");
 		account.setSslEnable(true);
 		String content = "现在是:" + DateUtil.now() + ",下班啦~";
 		MailUtil.send(account, CollUtil.newArrayList("admin@xxc520.cn"), "记得下班打卡！！！！", content + "下班啦 下班啦", false);
