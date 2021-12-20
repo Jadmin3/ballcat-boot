@@ -28,7 +28,7 @@ public class MailSchudle {
 		account.setUser("1243678726");
 		account.setPass("fuhzshyrexsujchb");
 		account.setSslEnable(true);
-		String content = "现在是:" + DateUtil.now() + ",下班啦~~！";
+		String content = "现在是:" + DateUtil.now() + ",下班啦~~！！";
 		MailUtil.send(account, CollUtil.newArrayList("admin@xxc520.cn"), "记得下班打卡！！！！", content + "下班啦 下班啦", false);
 	}
 
