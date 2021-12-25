@@ -66,15 +66,15 @@ ballcat:
     title: BallCat-Admin Docs
     group-name: ballcat-admin
     documentation-type: swagger_2
-    description: BallCat 后台管理服务Api文档
+    description: 后台管理服务Api文档
     version: 0.0.1
-    license: Powered By BallCat
-    licenseUrl: http://www.ballcat.cn/
-    terms-of-service-url: http://www.ballcat.cn/
+    license: Powered By Jadmin
+    licenseUrl: http://www.xxc520.cn/
+    terms-of-service-url: http://www.xxc520.cn/
     contact:
-      name: Hccake
-      email: chengbohua@foxmail.com
-      url: https://github.com/Hccake
+      name: Jadmin
+      email: admin@xxc520.cn
+      url: https://github.com/Jadmin3
     authorization:
       name: oauth2   #由于Knife4j是根据名称进行判断的，所以必须叫oauth2
       authorization-scope-list:
