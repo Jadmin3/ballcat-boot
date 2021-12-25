@@ -69,8 +69,8 @@ ballcat:
     description: 后台管理服务Api文档
     version: 0.0.1
     license: Powered By Jadmin
-    licenseUrl: http://www.xxc520.cn/
-    terms-of-service-url: http://www.xxc520.cn/
+    licenseUrl: https://www.xxc520.cn/
+    terms-of-service-url: https://www.xxc520.cn/
     contact:
       name: Jadmin
       email: admin@xxc520.cn
