@@ -4,6 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.extra.mail.MailAccount;
 import cn.hutool.extra.mail.MailUtil;
+import com.xxc.base.admin.moudle.mail.utils.RestDayUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,11 @@ public class MailSchudle {
 
 	@Scheduled(cron = "0 0 19 * * ? ")
 	public void mailAlarm() {
+		boolean weekend = RestDayUtils.isWeekend(LocalDate.now().toString());
+		if (weekend) {
+			log.info("今天是:{} 属于节假日 不提醒",LocalDate.now());
+			return;
+		}
 		log.info("发送消息提醒成功:{}", LocalDate.now());
 		MailAccount account = new MailAccount();
 		account.setHost("smtp.qq.com");
