@@ -14,9 +14,14 @@ import java.time.LocalDateTime;
 public class SsInfoEntity {
 
 	private Long id;
+
 	private String url;
+
 	private String msg;
+
 	private String by;
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime creationTime = LocalDateTime.now();
+
 }

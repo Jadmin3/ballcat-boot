@@ -1,9 +1,6 @@
 package com.xxc.base.admin.moudle.mail;
 
-import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.extra.mail.MailAccount;
-import cn.hutool.extra.mail.MailUtil;
+import cn.hutool.http.HttpUtil;
 import com.xxc.base.admin.moudle.mail.utils.RestDayUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -19,24 +16,18 @@ import java.time.LocalDate;
 @Slf4j
 public class MailSchudle {
 
-	@Scheduled(cron = "0 0 19 * * ? ")
+	private String url = "http://bark.xxc520.cn/YVE3STKSVsEbwKkBUJxnYc/小小谢温馨提醒/";
+
+	@Scheduled(cron = "0 0 18 * * ? ")
 	public void mailAlarm() {
 		boolean weekend = RestDayUtils.isWeekend(LocalDate.now().toString());
 		if (weekend) {
-			log.info("今天是:{} 属于节假日 不提醒",LocalDate.now());
+			log.info("今天是:{} 属于节假日 不提醒", LocalDate.now());
 			return;
 		}
+		String s = url + "下班打卡~ ";
 		log.info("发送消息提醒成功:{}", LocalDate.now());
-		MailAccount account = new MailAccount();
-		account.setHost("smtp.qq.com");
-		account.setPort(465);
-		account.setAuth(true);
-		account.setFrom("1243678726@qq.com");
-		account.setUser("1243678726");
-		account.setPass("fuhzshyrexsujchb");
-		account.setSslEnable(true);
-		String content = "现在是:" + DateUtil.now() + ",下班啦~~！！";
-		MailUtil.send(account, CollUtil.newArrayList("admin@xxc520.cn"), "记得下班打卡！！！！", content + "下班啦 下班啦", false);
+		HttpUtil.get(s);
 	}
 
 }

@@ -20,9 +20,8 @@ import java.util.*;
 @Slf4j
 public class SsInfoController {
 
-
 	@GetMapping("/info")
-	public Object getSsInfo(){
+	public Object getSsInfo() {
 		try {
 			String url = "";
 			String post = HttpUtil.get(url, new HashMap<>(2));
@@ -32,31 +31,29 @@ public class SsInfoController {
 			List<SsInfoEntity> datas = new ArrayList<>();
 			for (int i = 0; i < split.length; i++) {
 				String s1 = split[i];
-				if (s1.contains("vmess://")) {continue;}
+				if (s1.contains("vmess://")) {
+					continue;
+				}
 				SsInfoEntity ssInfoEntity = SsInfoEntity.builder().id(Long.parseLong(String.valueOf(i)))
-						.by("www.xxc520.cn").msg("版權來自于网站，請勿用於商業用途")
-						.url("ss://"+split[i]).build();
+						.by("www.xxc520.cn").msg("版權來自于网站，請勿用於商業用途").url("ss://" + split[i]).build();
 				datas.add(ssInfoEntity);
 			}
 
 			String[] split2 = s.split("vmess://");
-			for (String s1 : split2)  {
+			for (String s1 : split2) {
 				if (s1.contains("ss://")) {
 					continue;
 				}
-				SsInfoEntity ssInfoEntity = SsInfoEntity.builder().id(1L)
-						.by("www.xxc520.cn").msg("版權來自于网站，請勿用於商業用途")
-						.url("vmess://"+s1).build();
+				SsInfoEntity ssInfoEntity = SsInfoEntity.builder().id(1L).by("www.xxc520.cn").msg("版權來自于网站，請勿用於商業用途")
+						.url("vmess://" + s1).build();
 				datas.add(ssInfoEntity);
 			}
 
-
 			return R.ok(datas);
-		}catch (Exception e){
-			log.error("获取ss信息失败:{}",e.getMessage());
 		}
-
-
+		catch (Exception e) {
+			log.error("获取ss信息失败:{}", e.getMessage());
+		}
 
 		return null;
 	}
@@ -67,18 +64,17 @@ public class SsInfoController {
 		String post = HttpUtil.get(url, m);
 		byte[] decode = Base64.getDecoder().decode(post);
 		String s = new String(decode, "utf-8");
-//		System.out.println(s	);
+		// System.out.println(s );
 		String[] split = s.split("ss://");
-//		System.out.println(split[1]);
+		// System.out.println(split[1]);
 		String[] split2 = s.split("vmess://");
-		for (String s1 : split2)  {
+		for (String s1 : split2) {
 			if (s1.contains("ss://")) {
 				continue;
 			}
-			System.out.println("vmess://"+s1);
+			System.out.println("vmess://" + s1);
 		}
 
 	}
-
 
 }
